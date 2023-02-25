@@ -25,7 +25,7 @@ import com.example.jetnote.components.NoteButton
 import com.example.jetnote.components.NoteInputText
 import com.example.jetnote.data.NotesDataSource
 import com.example.jetnote.model.Note
-import java.time.format.DateTimeFormatter
+import com.example.jetnote.util.formatDate
 
 @Composable
 fun NoteScreen(
@@ -141,8 +141,8 @@ fun NoteRow(
                 style = MaterialTheme.typography.subtitle2
             )
             Text(text = note.description, style = MaterialTheme.typography.subtitle1)
-//            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
-//            style = MaterialTheme.typography.caption)
+            Text(text = formatDate(note.entryDate.time),
+            style = MaterialTheme.typography.caption)
         }
     }
 }

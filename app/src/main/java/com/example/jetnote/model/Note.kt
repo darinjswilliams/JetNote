@@ -3,9 +3,9 @@ package com.example.jetnote.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.sql.Date
 import java.time.Instant
-import java.util.*
+import java.util.UUID
+import java.util.Date
 
 
 @Entity(tableName = "notes_tbl")
@@ -19,5 +19,5 @@ data class Note(
     val description: String,
 
     @ColumnInfo(name = "note_entry_date")
-    val entryDate: Date = Date.from(Instant.now()) as Date
+    val entryDate: Date = Date.from(Instant.now())
 )
